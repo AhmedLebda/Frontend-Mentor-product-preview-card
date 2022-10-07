@@ -1,0 +1,133 @@
+/* Global Styles */
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --darker-cyan: hsl(158, 36%, 20%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --montserrat-font: "Montserrat", sans-serif;
+    --fraunces-font: "Fraunces", serif;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-family: var(--montserrat-font);
+    background-color: var(--cream);
+}
+
+/* Start of the card styles */
+.product-wrapper {
+    max-width: 700px;
+    margin: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    border-radius: 20px;
+    overflow: hidden;
+}
+.product-wrapper .image {
+    background: url(../images/image-product-desktop.jpg) no-repeat center
+        center/ cover;
+}
+
+.product-wrapper .product-info {
+    padding: 30px 40px;
+    background-color: hsl(0, 0%, 100%);
+}
+.product-wrapper .product-info h2 {
+    color: var(--dark-grayish-blue);
+    letter-spacing: 4px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-variant: small-caps;
+    margin-bottom: 30px;
+}
+.product-wrapper .product-info h1 {
+    color: var(--very-dark-blue);
+    text-transform: capitalize;
+    font-family: var(--fraunces-font);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.product-wrapper .product-info p {
+    color: var(--dark-grayish-blue);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.product-wrapper .product-info .price {
+    color: var(--dark-cyan);
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--fraunces-font);
+}
+.product-wrapper .product-info .price span {
+    color: var(--dark-grayish-blue);
+    font-size: 1rem;
+    text-decoration: line-through;
+    vertical-align: super;
+}
+.product-wrapper .product-info button {
+    background-color: var(--dark-cyan);
+    padding: 15px 50px;
+    width: 100%;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.product-wrapper .product-info button:active {
+    background-color: var(--darker-cyan);
+}
+.product-wrapper .product-info button img {
+    margin-right: 10px;
+}
+
+/* Start of the Footer Styles */
+footer {
+    position: absolute;
+    bottom: 10px;
+    color: var(--dark-grayish-blue);
+    font-weight: bold;
+}
+.attribution a {
+    text-decoration: none;
+    color: var(--very-dark-blue);
+}
+
+/* Page Responsive Styles */
+@media (max-width: 729px) {
+    .product-wrapper .image {
+        background: url(../images/image-product-mobile.jpg) no-repeat center
+            center/ cover;
+        height: 40vh;
+    }
+    .product-wrapper .product-info h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .product-wrapper .product-info h1 {
+        margin-bottom: 10px;
+    }
+    .product-wrapper .product-info p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+}
+@media (min-width: 575px) and (max-width: 729px) {
+    .product-wrapper .image {
+        height: 50vh;
+    }
+}
